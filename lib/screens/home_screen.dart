@@ -6,7 +6,7 @@ import 'package:music_app/widgets/list_element.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
-  AppData data = AppData();
+  final AppData data = AppData();
 
   @override
   Widget build(BuildContext context) {
