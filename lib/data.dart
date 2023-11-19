@@ -1,6 +1,10 @@
 class AppData {
   var discoverData = [
     {
+      'backgroundImage': 'assets/mix.png',
+      'name': 'Mix',
+    },
+    {
       'backgroundImage': 'assets/party.png',
       'name': 'Party',
     },
@@ -15,10 +19,6 @@ class AppData {
     {
       'backgroundImage': 'assets/indie.png',
       'name': 'Indie',
-    },
-    {
-      'backgroundImage': 'assets/mix.png',
-      'name': 'Mix',
     },
   ];
 }

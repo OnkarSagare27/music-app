@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:music_app/data.dart';
 import 'package:music_app/widgets/discover_card.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:music_app/widgets/list_element.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
@@ -11,9 +12,12 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'Discover',
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+        title: const Padding(
+          padding: EdgeInsets.only(left: 10),
+          child: Text(
+            'Discover',
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+          ),
         ),
         elevation: 0,
         backgroundColor: const Color(0xffff6f61),
@@ -34,11 +38,25 @@ class HomeScreen extends StatelessWidget {
             children: [
               Container(
                 height: 250,
+                width: MediaQuery.of(context).size.width,
                 decoration: const BoxDecoration(
                   color: Color(0xffff6f61),
                   borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(30),
                     bottomRight: Radius.circular(30),
+                  ),
+                ),
+                child: const Padding(
+                  padding: EdgeInsets.only(left: 15, bottom: 70),
+                  child: RotatedBox(
+                    quarterTurns: -1,
+                    child: Text(
+                      'Your Playlists',
+                      style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white),
+                    ),
                   ),
                 ),
               ),
@@ -57,11 +75,80 @@ class HomeScreen extends StatelessWidget {
                   options: CarouselOptions(
                     height: 350,
                     enableInfiniteScroll: false,
-                    autoPlay: false,
+                    autoPlay: true,
                     enlargeCenterPage: true,
                   ))
             ],
           ),
+          Container(
+            margin: const EdgeInsets.only(left: 10),
+            child: Row(
+              children: [
+                RotatedBox(
+                  quarterTurns: -1,
+                  child: Row(
+                    children: [
+                      Row(
+                        children: [
+                          Container(
+                            height: 10,
+                            width: 20,
+                            decoration: const BoxDecoration(
+                                color: Color(0xffff6f61),
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(50))),
+                          ),
+                          const SizedBox(
+                            width: 10,
+                          ),
+                          const Text(
+                            'Recent',
+                            style: TextStyle(
+                                fontSize: 15, fontWeight: FontWeight.bold),
+                          ),
+                          const SizedBox(
+                            width: 10,
+                          ),
+                          Container(
+                            height: 10,
+                            width: 20,
+                            decoration: const BoxDecoration(
+                              color: Color(0xffff6f61),
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(50),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+                const Column(
+                  children: [
+                    ListElement(
+                      name: 'Play Dead',
+                      singers: 'NEFFEX',
+                      duration: '3:31',
+                      image: 'assets/play_dead.png',
+                    ),
+                    ListElement(
+                      name: 'Unity',
+                      singers: 'TheFatRat',
+                      duration: '4:09',
+                      image: 'assets/unity.jpeg',
+                    ),
+                    ListElement(
+                      name: 'Dope',
+                      singers: 'Demeter',
+                      duration: '3:06',
+                      image: 'assets/dope.png',
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          )
         ],
       ),
       bottomNavigationBar: Container(
@@ -86,7 +173,7 @@ class HomeScreen extends StatelessWidget {
                     backgroundColor: Colors.white,
                     child: CircleAvatar(
                       radius: 24,
-                      backgroundImage: AssetImage('assets/cd_bg.jpeg'),
+                      backgroundImage: AssetImage('assets/calm_down.png'),
                       child: CircleAvatar(
                         radius: 8,
                         backgroundColor: Colors.white,
@@ -115,7 +202,7 @@ class HomeScreen extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          'Remu, Salena Gomez',
+                          'Rema, Selena Gomez',
                           style: TextStyle(
                             color: Colors.grey,
                             fontWeight: FontWeight.bold,

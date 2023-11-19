@@ -38,7 +38,7 @@ class DiscoverCard extends StatelessWidget {
             children: [
               Image.asset(
                 bgImage,
-                fit: BoxFit.fill,
+                fit: BoxFit.cover,
               ),
               Positioned(
                 width: 200,
