@@ -21,85 +21,115 @@ class HomeScreen extends StatelessWidget {
           )
         ],
       ),
-      bottomNavigationBar: Stack(
-        children: [
-          Container(
-            height: 150,
-            decoration: const BoxDecoration(
-              color: Colors.black,
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(30),
-                topRight: Radius.circular(30),
-              ),
-            ),
-            child: const Padding(
-              padding: EdgeInsets.fromLTRB(30, 20, 30, 20),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  CircleAvatar(
-                    radius: 26,
-                    backgroundColor: Colors.white,
-                    child: CircleAvatar(
+      bottomNavigationBar: Container(
+        decoration: const BoxDecoration(
+          color: Colors.black,
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(30),
+            topRight: Radius.circular(30),
+          ),
+        ),
+        height: 180,
+        child: Column(
+          children: [
+            Container(
+              child: Padding(
+                padding: EdgeInsets.fromLTRB(30, 20, 30, 20),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const CircleAvatar(
                       radius: 25,
-                      backgroundImage: AssetImage('assets/cd_bg.jpeg'),
+                      backgroundColor: Colors.white,
                       child: CircleAvatar(
-                        radius: 9,
-                        backgroundColor: Colors.white,
+                        radius: 24,
+                        backgroundImage: AssetImage('assets/cd_bg.jpeg'),
                         child: CircleAvatar(
                           radius: 8,
-                          backgroundColor: Colors.black,
+                          backgroundColor: Colors.white,
+                          child: CircleAvatar(
+                            radius: 7,
+                            backgroundColor: Colors.black,
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                  SizedBox(
-                    width: 15,
-                  ),
-                  SizedBox(
-                    height: 52,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Text(
-                          'Calm Down',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16,
-                          ),
-                        ),
-                        Text(
-                          'Remu, Salena Gomez',
-                          style: TextStyle(
-                            color: Colors.grey,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 12,
-                          ),
-                        ),
-                      ],
+                    const SizedBox(
+                      width: 15,
                     ),
-                  ),
-                  SizedBox(
-                    width: 30,
-                  ),
-                  SizedBox(
-                    height: 52,
-                    child: Center(
-                      child: Icon(
-                        Icons.favorite_border,
-                        color: Colors.white,
-                        size: 25,
+                    const SizedBox(
+                      height: 50,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Text(
+                            'Calm Down',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
+                            ),
+                          ),
+                          Text(
+                            'Remu, Salena Gomez',
+                            style: TextStyle(
+                              color: Colors.grey,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 12,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
-                  )
-                ],
+                    const SizedBox(
+                      width: 80,
+                    ),
+                    const SizedBox(
+                      height: 50,
+                      child: Center(
+                        child: Icon(
+                          Icons.favorite_border,
+                          color: Colors.white,
+                          size: 25,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 20,
+                    ),
+                    SizedBox(
+                      height: 45,
+                      width: 45,
+                      child: FloatingActionButton(
+                        backgroundColor: const Color(0xff424243),
+                        onPressed: () => print('Pressed'),
+                        shape: const RoundedRectangleBorder(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(20))),
+                        child: const Icon(
+                          Icons.pause_rounded,
+                          color: Colors.white,
+                        ),
+                      ),
+                    )
+                  ],
+                ),
               ),
             ),
-          )
-        ],
+            Container(
+              height: 90,
+              decoration: const BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(30),
+                  topRight: Radius.circular(30),
+                ),
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
