@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
           shadowColor: Colors.transparent,
           canvasColor: Colors.transparent),
       routes: {
-        '/': (context) => const HomeScreen(),
+        '/': (context) => HomeScreen(),
       },
     );
   }

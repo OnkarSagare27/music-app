@@ -1,24 +1,67 @@
 import 'package:flutter/material.dart';
+import 'package:music_app/data.dart';
+import 'package:music_app/widgets/discover_card.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  HomeScreen({super.key});
+  AppData data = AppData();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      body: Stack(
-        children: [
+      appBar: AppBar(
+        title: const Text(
+          'Discover',
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+        ),
+        elevation: 0,
+        backgroundColor: const Color(0xffff6f61),
+        actions: [
           Container(
-            height: 300,
-            decoration: const BoxDecoration(
-              color: Color(0xffff6f61),
-              borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(30),
-                bottomRight: Radius.circular(30),
-              ),
+            margin: const EdgeInsets.fromLTRB(10, 0, 30, 0),
+            child: const Icon(
+              Icons.align_horizontal_left_rounded,
+              size: 30,
             ),
-          )
+          ),
+        ],
+      ),
+      backgroundColor: Colors.white,
+      body: Column(
+        children: [
+          Stack(
+            children: [
+              Container(
+                height: 250,
+                decoration: const BoxDecoration(
+                  color: Color(0xffff6f61),
+                  borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(30),
+                    bottomRight: Radius.circular(30),
+                  ),
+                ),
+              ),
+              CarouselSlider.builder(
+                  itemCount: data.discoverData.length,
+                  itemBuilder: (context, index, index2) {
+                    return Padding(
+                      padding: const EdgeInsets.only(top: 30, bottom: 40),
+                      child: DiscoverCard(
+                        bgImage: data.discoverData[index]['backgroundImage']
+                            .toString(),
+                        name: data.discoverData[index]['name'].toString(),
+                      ),
+                    );
+                  },
+                  options: CarouselOptions(
+                    height: 350,
+                    enableInfiniteScroll: false,
+                    autoPlay: false,
+                    enlargeCenterPage: true,
+                  ))
+            ],
+          ),
         ],
       ),
       bottomNavigationBar: Container(
@@ -111,7 +154,7 @@ class HomeScreen extends StatelessWidget {
                         color: Colors.white,
                       ),
                     ),
-                  )
+                  ),
                 ],
               ),
             ),
