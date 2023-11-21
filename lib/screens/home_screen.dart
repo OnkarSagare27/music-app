@@ -222,7 +222,7 @@ class HomeScreen extends StatelessWidget {
                       height: 50,
                       child: Center(
                         child: Icon(
-                          Icons.favorite_border,
+                          Icons.favorite,
                           color: Color(0xffff6f61),
                           size: 25,
                         ),
