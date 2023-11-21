@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:music_app/screens/home_screen.dart';
+import 'package:music_app/screens/now_playig.dart';
 
 void main() {
   runApp(MyApp());

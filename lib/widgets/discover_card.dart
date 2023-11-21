@@ -69,7 +69,7 @@ class DiscoverCard extends StatelessWidget {
                             color: Colors.black,
                           ),
                         ),
-                      )
+                      ),
                     ],
                   ),
                 ),
